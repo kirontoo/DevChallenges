@@ -1,13 +1,13 @@
 :root {
 	--orange-color: #F7542E;
 	--active-color: #090F31;
-	--inactive-color: #9E;
+	--inactive-color: #9E9E9E;
 	--blue-color: #3D5AFE;
 	--gray01-color: #333;
-	--gray02-color: #3F;
-	--light-gray: #E0;
+	--gray02-color: #3F3F3F;
+	--light-gray: #E0E0E0;
 	--background-color: #FAFBFD;
-
+	--title-color: #4F4F4F;
 }
 
 body {
