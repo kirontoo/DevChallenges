@@ -1,0 +1,27 @@
+.nav-list {
+	list-style: none;
+	margin: 0;
+	padding:0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.nav {
+	margin-top: 4em;
+}
+
+
+.nav-link {
+	color: var(--inactive-color);
+	text-transform: capitalize;
+	font-size: 1em;
+	font-weight: 500;
+	margin: 0.5em 0;
+}
+
+.active {
+	color: var(--active-color);
+	font-weight: 700;
+}

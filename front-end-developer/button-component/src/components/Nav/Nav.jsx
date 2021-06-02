@@ -1,13 +1,16 @@
 import React from 'react';
+import './Nav.css'
+
 
 export function Nav ( { links } ) {
 	const buildNavLinks = () => {
-		return links.map( l => {
-			return (
-				<li className="nav-link">{ l }</li>
-			)
-		})
+		return links.map( l => <li className="nav-link">{ l }</li> )
 	}
 
-	return <nav className="nav">{ buildNavLinks() }</nav>
-}
+	return (
+		<nav className="nav">
+			<ul className="nav-list">
+				{ buildNavLinks() }
+			</ul>
+		</nav>
+)};
