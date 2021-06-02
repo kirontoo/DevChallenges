@@ -1,0 +1,18 @@
+.app {
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+.orange {
+	color: var(--orange-color);
+}
+
+.logo {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--active-color);
+}
+
+.logo:first-child {
+	text-transform: capitalize;
+}

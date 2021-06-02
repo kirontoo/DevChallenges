@@ -1,0 +1,26 @@
+:root {
+	--orange-color: #F7542E;
+	--active-color: #090F31;
+	--inactive-color: #9E;
+	--blue-color: #3D5AFE;
+	--gray01-color: #333;
+	--gray02-color: #3F;
+	--light-gray: #E0;
+	--background-color: #FAFBFD;
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+	/* font-family: 'Montserrat', sans-serif; */
+	/* font-family: 'Noto Sans JP', sans-serif; */
+	/* font-family: 'Poppins', sans-serif; */
+	/* font-family: 'Ubuntu Mono', monospace; */
+	font-size: 1em;
+}
