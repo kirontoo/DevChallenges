@@ -4,7 +4,7 @@ import './Nav.css'
 
 export function Nav ( { links } ) {
 	const buildNavLinks = () => {
-		return links.map( l => <li className="nav-link">{ l }</li> )
+		return links.map( l => <li key={l} className={ `nav-link ${( l == 'buttons' ) ? 'active' : ''}`  }>{ l }</li> )
 	}
 
 	return (
