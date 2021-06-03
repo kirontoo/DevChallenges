@@ -9,6 +9,20 @@
 	color: var(--orange-color);
 }
 
+.button-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 30%;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0.5em 0;
+}
+
 .logo {
 	font-family: inherit;
 	font-size: 1rem;
@@ -30,3 +44,13 @@
 	background: var(--background-color);
 }
 
+.content {
+	margin: 3em 5em;
+}
+
+.content > h1 {
+	font-family: 'Poppins', san-serif;
+	text-transform: capitalize;
+	color: var(--title-color);
+	margin-bottom: 1.5em;
+}
