@@ -19,7 +19,8 @@
 .row {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-start;
+	gap: 3em;
 	margin: 0.5em 0;
 }
 
@@ -46,7 +47,7 @@
 
 .content {
 	min-width: 40%;
-	max-width: 50%;
+	max-width: 80%;
 	margin: 3em 5em;
 }
 
