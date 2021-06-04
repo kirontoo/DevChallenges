@@ -24,11 +24,12 @@ function App() {
 	    <Button>Default</Button>
 	  </div>
 	  <div className="row">
-	    <Button variant="outline">Variant outline</Button>
-	    <Button variant="outline">Variant outline</Button>
+	    <Button variant="outline">outline default</Button>
+	    <Button color="primary" variant="outline">outline primary</Button>
+	    <Button color="danger" variant="outline">outline danger</Button>
 	  </div>
 	  <div className="row">
-	    <Button variant="text">Variant text</Button>
+	    <Button color="danger" variant="text">Variant text</Button>
 	    <Button variant="text">Variant text</Button>
 	  </div>
 	  <div className="row">
@@ -36,7 +37,7 @@ function App() {
 	  </div>
 	  <div className="row">
 	    <Button disabled>Disabled</Button>
-	    <Button variant="text" disabled>Disabled</Button>
+	    <Button variant="text" disabled>Disabled text</Button>
 	  </div>
 	  <div className="row">
 	    <Button color="primary" startIcon="shopping_cart">Default</Button>

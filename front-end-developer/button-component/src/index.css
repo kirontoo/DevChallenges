@@ -1,24 +1,25 @@
 :root {
+  /* TODO: convert all hex to rgba colors*/
   --orange-color: #F7542E;
 
   --active-color: #090F31;
   --inactive-color: #9E9E9E;
 
-  --primary-color: #3D5AFE;
-  --secondary-color: #455A64;
-  --danger-color: #D32F2F;
-  --variant-color: #3D5AFE;
-  --default-color: #E0E0E0;
+  --primary-color: 41, 98, 255;
+  --secondary-color: 69, 90, 100;
+  --danger-color: 211, 47, 47;
+  --default-color: 224, 224, 224;
+  --disabled-color: 158, 158, 158;
 
-  --primary-hover-color: #0039CB;
-  --secondary-hover-color: #1C313A;
-  --danger-hover-color: #9A0007;
-  --default-hover-color: #AEAEAE;
-  --text-hover-color: rgba(41, 98, 255, 0.1);
+  --primary-hover-color: 0, 57, 203;
+  --secondary-hover-color: 28, 49, 58;
+  --danger-hover-color: 154, 0, 7;
+  --default-hover-color: 174, 174, 174;
+  --text-hover-color: 41, 98, 255;
 
 
   --gray01-color: #333333;
-  --default-text-color: #3F3F3F;
+  --default-text-color: 63, 63, 63;
 
   --background-color: #FAFBFD;
   --title-color: #4F4F4F;
