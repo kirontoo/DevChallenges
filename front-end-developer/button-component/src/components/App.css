@@ -45,6 +45,8 @@
 }
 
 .content {
+	min-width: 40%;
+	max-width: 50%;
 	margin: 3em 5em;
 }
 
