@@ -1,27 +1,27 @@
 :root {
-	--orange-color: #F7542E;
+  --orange-color: #F7542E;
 
-	--active-color: #090F31;
-	--inactive-color: #9E9E9E;
+  --active-color: #090F31;
+  --inactive-color: #9E9E9E;
 
-	--primary-color: #3D5AFE;
-	--secondary-color: #455A64;
-	--danger-color: #D32F2F;
-	--default-color: #E0E0E0;
+  --primary-color: #3D5AFE;
+  --secondary-color: #455A64;
+  --danger-color: #D32F2F;
+  --variant-color: #3D5AFE;
+  --default-color: #E0E0E0;
 
-	--primary-hover-color: #0039CB;
-	--secondary-hover-color: #1C313A;
-	--danger-hover-color: #9A0007;
-	--default-hover-color: #AEAEAE;
-	--text-hover-color: rgba(41, 98, 255, 0.1);
+  --primary-hover-color: #0039CB;
+  --secondary-hover-color: #1C313A;
+  --danger-hover-color: #9A0007;
+  --default-hover-color: #AEAEAE;
+  --text-hover-color: rgba(41, 98, 255, 0.1);
 
-	--text-outline-color: #3D5AFE;
 
-	--gray01-color: #333333;
-	--default-text-color: #3F3F3F;
+  --gray01-color: #333333;
+  --default-text-color: #3F3F3F;
 
-	--background-color: #FAFBFD;
-	--title-color: #4F4F4F;
+  --background-color: #FAFBFD;
+  --title-color: #4F4F4F;
 }
 
 body {
@@ -32,9 +32,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-	/* font-family: 'Montserrat', sans-serif; */
-	/* font-family: 'Noto Sans JP', sans-serif; */
-	/* font-family: 'Poppins', sans-serif; */
-	/* font-family: 'Ubuntu Mono', monospace; */
-	font-size: 1em;
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Noto Sans JP', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-family: 'Ubuntu Mono', monospace; */
+  font-size: 1em;
 }
