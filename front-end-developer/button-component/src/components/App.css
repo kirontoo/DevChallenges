@@ -59,7 +59,7 @@
 	height: 100vh;
 	padding: 3em;
 	align-items: center;
-	background: var(--background-color);
+	background: rgba(var(--background-color), 1);
 }
 
 .content {
