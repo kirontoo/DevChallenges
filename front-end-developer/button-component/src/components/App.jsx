@@ -2,13 +2,9 @@ import './App.css';
 import Nav from './Nav';
 import Button from './Button';
 
-// - button page
-// - button component
-//		- props: text, size, color, variant, disabled
-//		TODO: labels for the buttons
-
 function App() {
-	const navLinks = [ "colors", "typography", "spaces", "buttons", "inputs", "grid" ];
+  const navLinks = [ "colors", "typography", "spaces", "buttons", "inputs", "grid" ];
+
   return (
     <main className="app">
       <aside className="sidebar">
@@ -130,9 +126,7 @@ function App() {
 	  </div>
 
 	  <div className="row">
-	    <p className="footer">created by 
-	      <a target="_blank" href="https://www.github.com/kirontoo">kirontoo</a> 
-	      - devchallenges.io
+	    <p className="footer">created by <a target="_blank" href="https://www.github.com/kirontoo">kirontoo</a> - devchallenges.io
 	    </p>
 	  </div>
 	</div>

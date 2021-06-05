@@ -1,9 +1,5 @@
 :root {
-  /* TODO: convert all hex to rgba colors*/
   --orange-color: #F7542E;
-
-  --active-color: #090F31;
-  --inactive-color: #9E9E9E;
 
   --primary-color: 41, 98, 255;
   --secondary-color: 69, 90, 100;
@@ -17,12 +13,11 @@
   --default-hover-color: 174, 174, 174;
   --text-hover-color: 41, 98, 255;
 
-
-  --gray01-color: #333333;
   --default-text-color: 63, 63, 63;
+  --hover-text-color: 130, 130, 130;
+  --footer-text-color: 169, 169, 169;
 
-  --background-color: #FAFBFD;
-  --title-color: #4F4F4F;
+  --title-color: 79, 79, 79;
 }
 
 body {
@@ -33,9 +28,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* font-family: 'Montserrat', sans-serif; */
-  /* font-family: 'Noto Sans JP', sans-serif; */
-  /* font-family: 'Poppins', sans-serif; */
-  /* font-family: 'Ubuntu Mono', monospace; */
   font-size: 1em;
 }

@@ -21,7 +21,7 @@
 }
 
 .hover-text {
-	color: var(--hover-text-color);
+	color: rgba(var(--hover-text-color), 1);
 }
 
 .row {
@@ -71,13 +71,14 @@
 .content > h1 {
 	font-family: 'Poppins', san-serif;
 	text-transform: capitalize;
-	color: var(--title-color);
+	color: rgba(var(--title-color), 1);
 }
 
 .footer {
 	margin: 5em 0;
-	color: var(--inactive-color);
+	color: rgba(var(--footer-text-color), 1);
 	font-size: 0.8em;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .footer > a {
