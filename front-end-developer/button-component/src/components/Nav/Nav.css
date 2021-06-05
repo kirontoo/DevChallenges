@@ -14,14 +14,19 @@
 
 
 .nav-link {
-	color: var(--inactive-color);
+	color: rgba(var(--disabled-color), 1);
 	text-transform: capitalize;
 	font-size: 1em;
 	font-weight: 500;
 	margin: 0.5em 0;
 }
 
-.active {
+.nav-link:hover {
+	cursor: pointer;
 	color: var(--active-color);
+}
+
+.active {
+	color: rgba(var(--active-color), 1);
 	font-weight: 700;
 }
