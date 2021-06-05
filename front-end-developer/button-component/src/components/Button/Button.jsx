@@ -28,7 +28,7 @@ const setHover =({ color, variant }) => {
 
 	if ( color ) { 
 		styles += ( variant ) ? 
-		` background: rgba(var(--${color}-hover-color), 0.4);` : 
+		` background: rgba(var(--${color}-hover-color), 0.2);` : 
 		` background: rgba(var(--${color}-hover-color), 1);`
 	} else { 
 		styles += ' background: rgba(var(--default-hover-color), 1);'
@@ -74,6 +74,20 @@ const setHeight = ({ size }) => {
 	}
 };
 
+const setIconMargin = ({ startIcon, endIcon }) => {
+	if ( startIcon ) {
+		return css`
+				margin-right: 0.8em;
+			`
+	}
+
+	if ( endIcon ) {
+		return css`
+				margin-left: 0.8em;
+			`
+	}
+}
+
 const Button = styled(Btn)`
 	font-family: 'Noto Sans JP', sans-serif;
 	font-weight: 500;
@@ -90,16 +104,16 @@ const Button = styled(Btn)`
 	border: ${ props => setBorder( props ) };
 	height: ${ props => setHeight( props ) };
 
-	:hover {
+	:hover, :focus {
 		${ props => ( !props.disabled ) ? setHover( props ) : '' }
 		cursor: ${ props => ( props.disabled ? 'not-allowed' : 'pointer' ) };
 	}
 
- 	${ props => ( props.disabledShadow || props.variant ) || 'box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);' };
+ 	${ props => ( props.disableShadow || props.variant ) || 'box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);' };
 
 	span.material-icons {
 		font-size: 1em;
-		margin: 0.2em;
+		${ props => setIconMargin( props ) }
 	}
 `
 
