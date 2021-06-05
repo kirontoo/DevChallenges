@@ -1,12 +1,5 @@
 import styled, { css } from 'styled-components';
 
-/**
-* options:
-*   size: sm md lg (change padding)
-* */
-
-// TODO: use grid instead of flex?
-
 const Btn = ({ className, children, startIcon, endIcon }) => {
 	return (
 		<button className={className}>
@@ -62,15 +55,25 @@ const setBorder = ({ color, variant }) => {
 const setPadding = ({ size }) => {
 	switch ( size ) {
 	case 'md':
-		return '0.5em 1.2em';
+		return '0.5em 1.5em';
 	case 'lg':
-		return '0.5em 1.8em';
+		return '0.5em 2.1em';
 	default: 
-		return '0.5em 1em';
+		return '0.5em 1.2em';
 	}
 }
 
-// TODO: fix variant text shadow
+const setHeight = ({ size }) => {
+	switch ( size ) {
+	case 'md':
+		return '3em';
+	case 'lg':
+		return '3.2em';
+	default: 
+		return '2.8em';
+	}
+};
+
 const Button = styled(Btn)`
 	font-family: 'Noto Sans JP', sans-serif;
 	font-weight: 500;
@@ -80,12 +83,12 @@ const Button = styled(Btn)`
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	max-height: 2.5em;
 
 	padding: ${ props => setPadding( props ) };
 	color: ${ props => setColor( props ) };
 	background: ${ props => setBackgroundColor( props ) };
 	border: ${ props => setBorder( props ) };
+	height: ${ props => setHeight( props ) };
 
 	:hover {
 		${ props => ( !props.disabled ) ? setHover( props ) : '' }
@@ -99,27 +102,5 @@ const Button = styled(Btn)`
 		margin: 0.2em;
 	}
 `
-
-// const Button = styled(Btn)`
-// 	font-family: 'Noto Sans JP', sans-serif;
-// 	font-weight: 500;
-// 	color: ${ props => setColor( props ) };
-// 	border-radius: 6px;
-// 	background: ${ props => setBackgroundColor( props ) };
-// 	padding: 0.5em 1em;
-// 	${ props => props.disabledShadow || 'box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);' };
-// 	text-align: center;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	text-decoration: none;
-// 	border: ${ props => props.variant == 'outline' ? '1px solid var(--variant-color)' : 'none'};
-//
-// 	:hover {
-// 		background: ${ props => setHover( props ) }; 
-// 		cursor: pointer;
-// 	}
-// `
-
 
 export { Button };
