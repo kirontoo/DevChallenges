@@ -16,12 +16,29 @@
 	min-height: 30%;
 }
 
+.button-name {
+	font-size: 0.8em;
+}
+
+.hover-text {
+	color: var(--hover-text-color);
+}
+
 .row {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+	align-items: flex-end;
 	gap: 3em;
-	margin: 0.5em 0;
+	margin: 0.8em 0;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 0.2em;
 }
 
 .logo {
@@ -55,5 +72,15 @@
 	font-family: 'Poppins', san-serif;
 	text-transform: capitalize;
 	color: var(--title-color);
-	margin-bottom: 1.5em;
+}
+
+.footer {
+	margin: 5em 0;
+	color: var(--inactive-color);
+	font-size: 0.8em;
+}
+
+.footer > a {
+	color: inherit;
+	font-weight: 700;
 }
