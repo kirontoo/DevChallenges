@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://kirontoo-dc-button-component.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/kirontoo/devchallenges/tree/main/front-end-developer/button-component">
+    <a href="https://devchallenges.io/solutions/ikar6sZQiHAJkZizSzUO">
       Solution
     </a>
     <span> | </span>
@@ -48,18 +48,17 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 For this project, I initially was going to use a variety of CSS classes to handle all the styling.
 But after a little more research, I learned about `styled components` and challenged myself to figure out how to implement it.
-Overall, it wasn't too hard trying to impelement styled components. 
+Overall, it wasn't too hard trying to implement styled components. 
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-- [React](https://reactjs.org/)
-- [Styled Components](https://styled-components.com/)
-- [Material Design Icons](https://google.github.io/material-design-icons/)
 - HTML
 - CSS
 - Javascript
+- [React](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
 
 ## Features
 
