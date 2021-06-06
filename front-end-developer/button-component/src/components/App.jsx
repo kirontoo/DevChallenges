@@ -126,7 +126,7 @@ function App() {
 	  </div>
 
 	  <div className="row">
-	    <p className="footer">created by <a target="_blank" href="https://www.github.com/kirontoo">kirontoo</a> - devchallenges.io
+	    <p className="footer">created by <a target="_blank" rel="noreferrer" href="https://www.github.com/kirontoo">kirontoo</a> - devchallenges.io
 	    </p>
 	  </div>
 	</div>
