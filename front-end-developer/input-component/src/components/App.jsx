@@ -17,7 +17,7 @@ function App() {
 	  <Nav links={navLinks}/>
       	</aside>
       	<section className="content">
-      	  <Route path="/" component={InputPage}/>
+      	  <Route exact path="/" component={InputPage}/>
           <Route path="/buttons" component={ButtonPage}/>
           <Route path="/inputs" component={InputPage}/>
       	</section>
