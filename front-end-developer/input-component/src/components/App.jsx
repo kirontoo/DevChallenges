@@ -14,7 +14,7 @@ function App() {
 	  <span className="logo">
 	    <span className="orange">dev</span><span>challenges.io</span>
 	  </span>
-	  <Nav links={navLinks}/>
+	  <Nav/>
       	</aside>
       	<section className="content">
       	  <Route exact path="/" component={InputPage}/>
