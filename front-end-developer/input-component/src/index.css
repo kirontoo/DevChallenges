@@ -1,0 +1,34 @@
+:root {
+  --orange-color: #F7542E;
+  --active-color: 9, 15, 49;
+
+  --primary-color: 41, 98, 255;
+  --secondary-color: 69, 90, 100;
+  --danger-color: 211, 47, 47;
+  --default-color: 224, 224, 224;
+  --disabled-color: 158, 158, 158;
+
+  --primary-hover-color: 0, 57, 203;
+  --secondary-hover-color: 28, 49, 58;
+  --danger-hover-color: 154, 0, 7;
+  --default-hover-color: 174, 174, 174;
+  --text-hover-color: 41, 98, 255;
+
+  --default-text-color: 63, 63, 63;
+  --hover-text-color: 130, 130, 130;
+  --footer-text-color: 169, 169, 169;
+
+  --title-color: 79, 79, 79;
+  --background-color: 250, 251, 253;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 1em;
+}

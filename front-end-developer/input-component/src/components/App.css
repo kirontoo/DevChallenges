@@ -1,0 +1,87 @@
+.app {
+	font-family: 'Ubuntu Mono', monospace;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+}
+
+.orange {
+	color: var(--orange-color);
+}
+
+.button-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 30%;
+}
+
+.button-name {
+	font-size: 0.8em;
+}
+
+.hover-text {
+	color: rgba(var(--hover-text-color), 1);
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-end;
+	gap: 3em;
+	margin: 0.8em 0;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 0.2em;
+}
+
+.logo {
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--active-color);
+}
+
+.logo:first-child {
+	text-transform: capitalize;
+}
+
+.sidebar {
+	font-family: 'Poppins', san-serif;
+	min-width: 10%;
+	max-width: 15%;
+	height: 100vh;
+	padding: 3em;
+	align-items: center;
+	background: rgba(var(--background-color), 1);
+}
+
+.content {
+	min-width: 40%;
+	max-width: 80%;
+	margin: 3em 5em;
+}
+
+.content > h1 {
+	font-family: 'Poppins', san-serif;
+	text-transform: capitalize;
+	color: rgba(var(--title-color), 1);
+}
+
+.footer {
+	margin: 5em 0;
+	color: rgba(var(--footer-text-color), 1);
+	font-size: 0.8em;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.footer > a {
+	color: inherit;
+	font-weight: 700;
+}

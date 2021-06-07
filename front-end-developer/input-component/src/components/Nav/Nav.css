@@ -1,0 +1,32 @@
+.nav-list {
+	list-style: none;
+	margin: 0;
+	padding:0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.nav {
+	margin-top: 4em;
+}
+
+
+.nav-link {
+	color: rgba(var(--disabled-color), 1);
+	text-transform: capitalize;
+	font-size: 1em;
+	font-weight: 500;
+	margin: 0.5em 0;
+}
+
+.nav-link:hover {
+	cursor: pointer;
+	color: var(--active-color);
+}
+
+.active {
+	color: rgba(var(--active-color), 1);
+	font-weight: 700;
+}
