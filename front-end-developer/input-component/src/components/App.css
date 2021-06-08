@@ -9,14 +9,14 @@
 	color: var(--orange-color);
 }
 
-.button-list {
+.list {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	min-height: 30%;
 }
 
-.button-name {
+.list-name {
 	font-size: 0.8em;
 }
 
