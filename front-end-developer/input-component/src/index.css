@@ -12,7 +12,7 @@
   --secondary-hover-color: 28, 49, 58;
   --danger-hover-color: 154, 0, 7;
   --default-hover-color: 174, 174, 174;
-  --text-hover-color: 41, 98, 255;
+  --text-hover-color: var(--primary-color);
 
   --default-text-color: 63, 63, 63;
   --hover-text-color: 130, 130, 130;
@@ -20,6 +20,11 @@
 
   --title-color: 79, 79, 79;
   --background-color: 250, 251, 253;
+
+  --input-disabled-color: var(--default-color);
+  --input-default-color: var(--hover-text-color);
+  --input-error-color: var(--danger-color);
+  --input-text-color: 51, 51, 51;
 }
 
 body {
