@@ -54,37 +54,33 @@ const setBorder = ({ color, variant }) => {
 
 const setPadding = ({ size }) => {
 	switch ( size ) {
-	case 'md':
-	return '0.5em 1.5em';
-	case 'lg':
-	return '0.5em 2.1em';
-	default: 
-	return '0.5em 1.2em';
+		case 'md':
+			return '0.5em 1.5em';
+		case 'lg':
+			return '0.5em 2.1em';
+		default: 
+			return '0.5em 1.2em';
 	}
 }
 
 const setHeight = ({ size }) => {
 	switch ( size ) {
-	case 'md':
-	return '3em';
-	case 'lg':
-	return '3.2em';
-	default: 
-	return '2.8em';
+		case 'md':
+			return '3em';
+		case 'lg':
+			return '3.2em';
+		default: 
+			return '2.8em';
 	}
 };
 
 const setIconMargin = ({ startIcon, endIcon }) => {
 	if ( startIcon ) {
-		return css`
-margin-right: 0.8em;
-			`
+		return css` margin-right: 0.8em; `
 	}
 
 	if ( endIcon ) {
-		return css`
-margin-left: 0.8em;
-			`
+		return css` margin-left: 0.8em; `
 	}
 }
 
