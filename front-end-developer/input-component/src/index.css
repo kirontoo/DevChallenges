@@ -22,6 +22,7 @@
   --background-color: 250, 251, 253;
 
   --input-disabled-color: var(--default-color);
+  --input-disabled-background-color: 242, 242, 242;
   --input-default-color: var(--hover-text-color);
   --input-error-color: var(--danger-color);
   --input-text-color: 51, 51, 51;
