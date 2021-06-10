@@ -7,7 +7,7 @@ const Btn = ({ className, children, startIcon, endIcon }) => {
 			{ children }
 			{ endIcon ? <span className="material-icons">{ endIcon }</span> : undefined }
 		</button>
-)};
+	)};
 
 const setColor = ( { disabled, color, variant } ) => { 
 	if ( disabled ) { return 'rgba(var(--disabled-color), 1)' }
@@ -19,7 +19,7 @@ const setBackgroundColor =  ( { color, variant } ) => {
 	if ( color && color !== 'default' ) {
 		return `rgba(var(--${color}-color), 1)`;
 	} else {
-			return 'rgba(var(--default-color), 1)';
+		return 'rgba(var(--default-color), 1)';
 	}
 }
 
@@ -46,7 +46,7 @@ const setHover =({ color, variant }) => {
 
 const setBorder = ({ color, variant }) => {
 	if ( variant === 'outline' ) {
-			return color ? `1px solid rgba(var(--${color}-color), 1)` : '1px solid rgba(var(--default-text-color), 1)';
+		return color ? `1px solid rgba(var(--${color}-color), 1)` : '1px solid rgba(var(--default-text-color), 1)';
 	} else {
 		return 'none';
 	}
@@ -55,35 +55,35 @@ const setBorder = ({ color, variant }) => {
 const setPadding = ({ size }) => {
 	switch ( size ) {
 	case 'md':
-		return '0.5em 1.5em';
+	return '0.5em 1.5em';
 	case 'lg':
-		return '0.5em 2.1em';
+	return '0.5em 2.1em';
 	default: 
-		return '0.5em 1.2em';
+	return '0.5em 1.2em';
 	}
 }
 
 const setHeight = ({ size }) => {
 	switch ( size ) {
 	case 'md':
-		return '3em';
+	return '3em';
 	case 'lg':
-		return '3.2em';
+	return '3.2em';
 	default: 
-		return '2.8em';
+	return '2.8em';
 	}
 };
 
 const setIconMargin = ({ startIcon, endIcon }) => {
 	if ( startIcon ) {
 		return css`
-				margin-right: 0.8em;
+margin-right: 0.8em;
 			`
 	}
 
 	if ( endIcon ) {
 		return css`
-				margin-left: 0.8em;
+margin-left: 0.8em;
 			`
 	}
 }
