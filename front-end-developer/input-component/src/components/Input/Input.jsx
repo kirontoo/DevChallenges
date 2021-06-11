@@ -11,29 +11,34 @@ import styled from 'styled-components';
 *   size: sm, md
 *   fullWidth
 *   multiline ( built-in )
-*
+*   TODO: label on focus should be blue
 * */
 
-const Inpt = ({ className, startIcon, endIcon, placeholder }) => {
-  return <input className={className} placeholder={placeholder} />
+
+const Inpt = ({ startIcon, endIcon, multiline, ...rest }) => {
+  return <input {...rest} multiline={multiline}/>
 };
 
 const setFocusColor = ({ error }) => {
- return ( error ) ? `rgba(var(--input-error-color), 1)` : `rgba(var(--primary-color), 1)`;
+  return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--primary-color), 1)';
 };
 
 const setBorderColor = ({ disabled, error }) => {
   if ( disabled ) {
-    return `rgba(var(--input-disabled-color), 1)`;
+    return 'rgba(var(--input-disabled-color), 1)';
   } else if ( error ) {
-    return `rgba(var(--input-error-color), 1)`; 
+    return 'rgba(var(--input-error-color), 1)'; 
   } else {
-    return `rgba(var(--input-default-color), 1)`; 
+    return 'rgba(var(--input-default-color), 1)'; 
   }
 };
 
 const setErrorColor = ({ error }) => {
- return ( error ) ? `rgba(var(--input-error-color), 1)` : `rgba(var(--input-default-color), 1)`;
+  return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--input-default-color), 1)';
+}
+
+const setLabelColor = ({ focus, error }) => {
+  return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--input-text-color), 1)';
 }
 
 const StyledInput = styled(Inpt)`
@@ -46,7 +51,7 @@ const StyledInput = styled(Inpt)`
   border: 1px solid ${props => setBorderColor( props )};
   border-radius: 0.5em;
 
-  ${ props => props.disabled ? `background-color: rgba(var(--input-disabled-background-color), 1);` : '' }
+  ${ props => props.disabled ? 'background-color: rgba(var(--input-disabled-background-color), 1);' : '' }
 
   &::placeholder {
     color: rgba(var( --input-default-color ), 1);
@@ -71,8 +76,12 @@ const Label = styled.label`
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 400;
   font-size: 0.8em;
-  color: rgba(var(--input-text-color), 1);
+  color: ${ props => setLabelColor(props) };
   margin-bottom: 0.5em;
+
+  &:focus {
+    color: rgba(var(--primary-color), 1);
+  }
 `;
 
 const HelperText = styled.span`
@@ -87,7 +96,7 @@ const HelperText = styled.span`
 const Input = ( props ) => {
   return (
     <Section>
-      <Label>{props.label}</Label>
+      <Label focus={props.focus} error={props.error}>{props.label}</Label>
       <StyledInput {...props}></StyledInput>
       <HelperText error={props.error}>{ props.helperText }</HelperText>
     </Section>
