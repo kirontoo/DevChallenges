@@ -5,7 +5,6 @@ import styled from 'styled-components';
 *   -- :hover, :focus
 *   -- error
 *   -- disabled
-*   helperText: string
 *   startIcon, endIcon
 *   value ( built-in )
 *   size: sm, md
@@ -41,13 +40,21 @@ const setLabelColor = ({ focus, error }) => {
   return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--input-text-color), 1)';
 }
 
+const setSize = ({ size }) => {
+  if ( size == 'md' ) {
+    return '1.3em 0.8em'
+  } else {
+    return '1em 0.8em'
+  }
+}
+
 const StyledInput = styled(Inpt)`
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 500;
-  padding: 1em 0.8em;
+  padding: ${ props => setSize(props) };
 
   color: rgba(var(--input-text-color), 1);
-  width: 15em;
+  width: ${ props => props.fullWidth ? '100%' : '15em'};
   border: 1px solid ${props => setBorderColor( props )};
   border-radius: 0.5em;
 
@@ -70,6 +77,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
 `;
 
 const Label = styled.label`
