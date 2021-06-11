@@ -109,9 +109,15 @@ const ButtonPage = () => {
 	    <p className="list-name hover-text">&:hover, &:focus</p>
 	    <Button>Default</Button>
 	  </div>
-	  <Button color="primary">Primary</Button>
-	  <Button color="secondary">Secondary</Button>
-	  <Button color="danger">Danger</Button>
+	  <div className="column">
+      	    <Button color="primary">Primary</Button>
+	  </div>
+	  <div className="column">
+      	    <Button color="secondary">Secondary</Button>
+	  </div>
+	  <div className="column">
+      	    <Button color="danger">Danger</Button>
+	  </div>
 	</div>
 
 	<div className="row">

@@ -11,10 +11,10 @@ function App() {
     <Router>
       <main className="app">
       	<aside className="sidebar">
-	  <span className="logo">
-	    <span className="orange">dev</span><span>challenges.io</span>
-	  </span>
-	  <Nav/>
+	  			<span className="logo">
+	    			<span className="orange">dev</span><span>challenges.io</span>
+	  			</span>
+	  			<Nav/>
       	</aside>
       	<section className="content">
       	  <Route exact path="/" component={InputPage}/>
