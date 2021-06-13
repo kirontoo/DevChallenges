@@ -112,7 +112,7 @@ const Input = ({ startIcon, endIcon, error, label, helperText, ...props }) => {
         ? <Icon endIcon={ true } className="material-icons">{ endIcon }</Icon>
         : undefined
       }
-      <StyledInput { ...props }></StyledInput>
+      <StyledInput error={ error } { ...props } />
       <HelperText error={ error }>{ helperText }</HelperText>
     </Section>
   )
