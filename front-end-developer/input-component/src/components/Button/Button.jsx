@@ -109,7 +109,7 @@ const Button = styled(Btn)`
 		cursor: ${ props => ( props.disabled ? 'not-allowed' : 'pointer' ) };
 	}
 
- 	${ props => ( props.disableShadow || props.variant ) || 'box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);' };
+	${ props => ( props.disableShadow || props.variant ) || 'box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);' };
 
 	span.material-icons {
 		font-size: 1em;
