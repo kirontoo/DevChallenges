@@ -2,13 +2,8 @@ import styled from 'styled-components';
 
 /*
 * Requirements:
-*   -- :hover, :focus
-*   -- error
-*   -- disabled
+*   -- :focus -> label doesn't change color
 *   startIcon, endIcon
-*   value ( built-in )
-*   size: sm, md
-*   fullWidth
 *   multiline ( built-in )
 *   TODO: label on focus should be blue
 * */
@@ -36,7 +31,7 @@ const setErrorColor = ({ error }) => {
   return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--input-default-color), 1)';
 }
 
-const setLabelColor = ({ focus, error }) => {
+const setLabelColor = ({ error }) => {
   return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--input-text-color), 1)';
 }
 
@@ -92,6 +87,12 @@ const Label = styled.label`
   }
 `;
 
+const Icon = styled.i`
+  position: relative;
+  top: 1.65em;
+  left: ${ props => props.startIcon ? '0.5em' : props.endIcon ? '9em' : 'none' };
+`;
+
 const HelperText = styled.span`
   display: ${ props => props.helperText ? 'none' : 'block' };
   font-family: 'Noto Sans JP', sans-serif;
@@ -101,12 +102,18 @@ const HelperText = styled.span`
   color: ${props => setErrorColor( props )};
 `;
 
-const Input = ( props ) => {
+const Input = ({ startIcon, endIcon, error, label, helperText, ...props }) => {
   return (
     <Section>
-      <Label focus={props.focus} error={props.error}>{props.label}</Label>
-      <StyledInput {...props}></StyledInput>
-      <HelperText error={props.error}>{ props.helperText }</HelperText>
+      <Label error={ error }>{ label }</Label>
+      { startIcon 
+        ? <Icon startIcon={ true } className="material-icons">{ startIcon }</Icon> 
+        : endIcon 
+        ? <Icon endIcon={ true } className="material-icons">{ endIcon }</Icon>
+        : undefined
+      }
+      <StyledInput { ...props }></StyledInput>
+      <HelperText error={ error }>{ helperText }</HelperText>
     </Section>
   )
 };

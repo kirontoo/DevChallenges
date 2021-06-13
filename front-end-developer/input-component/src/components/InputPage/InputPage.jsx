@@ -12,11 +12,11 @@ const InputPage = () => {
             <Input label="Label" placeholder="Placeholder" />
           </div>
           <div className="column">
-	          <p className="list-name hover-text">&:hover</p>
+	    <p className="list-name hover-text">&:hover</p>
             <Input label="Label" placeholder="Placeholder" />
           </div>
           <div className="column">
-	          <p className="list-name hover-text">&:focus</p>
+	    <p className="list-name hover-text">&:focus</p>
             <Input label="Label" placeholder="Placeholder" focus />
           </div>
         </div>
@@ -27,11 +27,11 @@ const InputPage = () => {
             <Input label="Label" placeholder="Placeholder" error />
           </div>
           <div className="column">
-	          <p className="list-name hover-text">&:hover</p>
+	    <p className="list-name hover-text">&:hover</p>
             <Input label="Label" placeholder="Placeholder" error />
           </div>
           <div className="column">
-	          <p className="list-name hover-text">&:focus</p>
+	    <p className="list-name hover-text">&:focus</p>
             <Input label="Label" placeholder="Placeholder" error />
           </div>
         </div>
@@ -57,7 +57,7 @@ const InputPage = () => {
         <div className="row">
           <div className="column">
             <p className="list-name">&lt;Input startIcon="mail" /&gt;</p>
-            <Input label="Label" placeholder="Placeholder" endIcon="mail"/>
+            <Input label="Label" placeholder="Placeholder" startIcon="mail"/>
           </div>
           <div className="column">
             <p className="list-name">&lt;Input endIcon="mail" /&gt;</p>
@@ -98,7 +98,7 @@ const InputPage = () => {
         </div>
 
       </div>
-    </>
+      </>
   )
 }
 
