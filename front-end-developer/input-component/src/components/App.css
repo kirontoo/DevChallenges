@@ -70,7 +70,7 @@
 	margin: 3em 5em;
 }
 
-.content > h1 {
+.content-title {
 	font-family: 'Poppins', san-serif;
 	text-transform: capitalize;
 	color: rgba(var(--title-color), 1);

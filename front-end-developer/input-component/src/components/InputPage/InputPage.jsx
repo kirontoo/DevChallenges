@@ -3,7 +3,7 @@ import Input from '../Input';
 const InputPage = () => {
 	return (
 		<>
-			<h1>input page</h1>
+			<h1 className="content-title">input page</h1>
 			<div className="list">
 
 				<div className="row">
@@ -95,6 +95,11 @@ const InputPage = () => {
 						<p className="list-name">&lt;Input multiline row="4" /&gt;</p>
 						<Input label="Label" placeholder="Placeholder" multiline row="4"/>
 					</div>
+				</div>
+
+				<div className="row">
+					<p className="footer">created by <a target="_blank" rel="noreferrer" href="https://www.github.com/kirontoo">kirontoo</a> - devchallenges.io
+					</p>
 				</div>
 
 			</div>

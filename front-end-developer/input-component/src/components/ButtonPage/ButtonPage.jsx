@@ -3,7 +3,7 @@ import Button from '../Button';
 const ButtonPage = () => {
 	return (
 		<>
-			<h1>buttons</h1>
+			<h1 className="content-title">buttons</h1>
 			<div className="list">
 
 				<div className="row">
