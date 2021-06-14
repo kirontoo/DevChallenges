@@ -10,14 +10,20 @@ const setFocusColor = ({ error }) => {
 	return ( error ) ? 'rgba(var(--input-error-color), 1)' : 'rgba(var(--primary-color), 1)';
 };
 
-const setBorderColor = ({ disabled, error }) => {
+const setBorderColor = ({ focus, disabled, error }) => {
+	if ( focus && !error && !disabled ) {
+		return `rgba(var(--primary-color), 1)`;
+	}
+
 	if ( disabled ) {
 		return 'rgba(var(--input-disabled-color), 1)';
-	} else if ( error ) {
+	} 
+
+	if ( error ) {
 		return 'rgba(var(--input-error-color), 1)'; 
-	} else {
-		return 'rgba(var(--input-default-color), 1)'; 
-	}
+	} 
+
+	return 'rgba(var(--input-default-color), 1)'; 
 };
 
 const setErrorColor = ({ error }) => {
@@ -26,18 +32,20 @@ const setErrorColor = ({ error }) => {
 		: 'rgba(var(--input-default-color), 1)';
 }
 
-const setLabelColor = ({ error }) => {
+const setLabelColor = ({ error, focus }) => {
+	if ( !error && focus ) {
+		return 'rgba(var(--primary-color), 1)';
+	}
+
 	return error 
 		? 'rgba(var(--input-error-color), 1)' 
 		: 'rgba(var(--input-text-color), 1)';
 }
 
 const setSize = ({ size }) => {
-	if ( size == 'md' ) {
-		return '1.3em 0.8em'
-	} else {
-		return '1em 0.8em'
-	}
+	return size == 'md'
+		? '1.3em 0.8em'
+		: '1em 0.8em';
 }
 
 const StyledInput = styled(Inpt)`
@@ -81,15 +89,11 @@ const Label = styled.label`
 	font-size: 0.8em;
 	color: ${ props => setLabelColor(props) };
 	margin-bottom: 0.5em;
-
-	&:focus {
-		color: rgba(var(--primary-color), 1);
-	}
 `;
 
 const Icon = styled.i`
 	position: relative;
-	// top: 1.65em;
+	color: rgba(var(--input-default-color), 1);
 	right: ${ props => props.startIcon ? '9em' : props.endIcon ? '1.5em' : 'none' };
 `;
 
@@ -112,7 +116,7 @@ const InputContainer = styled.div`
 const Input = ({ startIcon, endIcon, error, label, helperText, ...props }) => {
 	return (
 		<Section>
-			<Label error={ error }>{ label }</Label>
+			<Label focus={ props.focus } error={ error }>{ label }</Label>
 			<InputContainer>
 				<StyledInput startIcon={ startIcon } endIcon={ endIcon } error={ error } { ...props } />
 				{ startIcon 
