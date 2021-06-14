@@ -3,7 +3,7 @@ import './Nav.css'
 import { NavLink } from 'react-router-dom';
 
 export function Nav () {
-  const links = [ "colors", "typography", "spaces", "buttons", "inputs", "grid" ];
+	const links = [ "colors", "typography", "spaces", "buttons", "inputs", "grid" ];
 
 	const buildNavLinks = () => {
 		return links.map( l => (
