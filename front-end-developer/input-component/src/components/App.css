@@ -58,7 +58,7 @@
 	font-family: 'Poppins', san-serif;
 	min-width: 10%;
 	max-width: 15%;
-	height: 100vh;
+	height: unset;
 	padding: 3em;
 	align-items: center;
 	background: rgba(var(--background-color), 1);
