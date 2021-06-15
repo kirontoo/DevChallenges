@@ -10,8 +10,6 @@ import {
 } from 'react-router-dom';
 
 function App() {
-	const navLinks = [ "colors", "typography", "spaces", "buttons", "inputs", "grid" ];
-
 	return (
 		<Router>
 			<main className="app">

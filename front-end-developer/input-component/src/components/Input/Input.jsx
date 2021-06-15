@@ -43,7 +43,7 @@ const setLabelColor = ({ error, focus }) => {
 }
 
 const setSize = ({ size }) => {
-	return size == 'md'
+	return size === 'md'
 		? '1.3em 0.8em'
 		: '1em 0.8em';
 }
