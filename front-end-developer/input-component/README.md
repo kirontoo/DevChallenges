@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Button Components</h1>
+<h1 align="center">Input Components</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,15 +8,15 @@
 
 <div align="center">
   <h3>
-    <a href="https://kirontoo-dc-button-component.netlify.app/">
+    <a href="https://kirontoo-dc-input-component.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/solutions/ikar6sZQiHAJkZizSzUO">
+    <a href="https://devchallenges.io/solutions/TlNOSGNtGoJlKW2Dtuqa">
       Solution
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY">
+    <a href="https://devchallenges.io/challenges/TSqutYM4c5WtluM7QzGp">
       Challenge
     </a>
   </h3>
@@ -39,16 +39,9 @@
 
 ![screenshot](./screenshots/screenshot.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
-
-For this project, I initially was going to use a variety of CSS classes to handle all the styling.
-But after a little more research, I learned about `styled components` and challenged myself to figure out how to implement it.
-Overall, it wasn't too hard trying to implement styled components. 
+This project was easier than the previous one since it is an improvement from the `button-component project`.
+I added some routing to the sidebar so that you can still see the button components and a 404 page.
+From this project, I learned how to position icons inside an input without it misaligning in different device widths.
 
 ### Built With
 
@@ -77,7 +70,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 $ git clone https://github.com/kirontoo/devchallenges.git
 
 # Navigate to the project folder
-$ cd ./frontend-end-developer/button-component
+$ cd ./frontend-end-developer/input-component
 
 # Install dependencies
 $ npm install
@@ -92,6 +85,7 @@ $ npm start
 
 - [Material Icons](https://google.github.io/material-design-icons/)
 - [Styled Components Quickstart Guide](https://scalablecss.com/styled-components-quickstart-guide/)
+- [React Router](https://blog.logrocket.com/react-router-dom-set-up-essential-components-parameterized-routes-505dc93642f1/)
 
 ## Contact
 
