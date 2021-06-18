@@ -41,13 +41,7 @@ export default {
   plugins: [
     typescript({ sourceMap: !production }),
     svelte({
-      preprocess: sveltePreprocess({ sourceMap: !production }),
-			compilerOptions: {
-        // enable run-time checks when not in production
-        dev: !production
-      },
-
-      preprocess: sveltePreprocess({
+      preprocess: sveltePreprocess({ 
         sourceMap: !production,
         postcss: {
           plugins: [
@@ -56,7 +50,10 @@ export default {
           ],
         },
       }),
-
+      compilerOptions: {
+        // enable run-time checks when not in production
+        dev: !production
+      },
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
@@ -73,10 +70,10 @@ export default {
     }),
 
     commonjs(),
-		typescript({
-			sourceMap: !production,
-			inlineSources: !production
-		}),
+    typescript({
+      sourceMap: !production,
+      inlineSources: !production
+    }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
