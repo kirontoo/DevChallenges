@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
+import json from 'rollup-plugin-json';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -35,7 +36,7 @@ export default {
   output: {
     sourcemap: true,
     format: 'iife',
-    name: 'app',
+    name: 'windbnb',
     file: 'public/build/bundle.js'
   },
   plugins: [
@@ -73,6 +74,18 @@ export default {
     typescript({
       sourceMap: !production,
       inlineSources: !production
+    }),
+
+    json({
+      // All JSON files will be parsed by default,
+      // but you can also specifically include/exclude files
+      exclude: [ 'node_modules/**' ],
+
+      // ignores indent and generates the smallest code
+      compact: true, // Default: false
+
+      // generate a named export for every property of the JSON object
+      namedExports: true // Default: true
     }),
 
     // In dev mode, call `npm run start` once
