@@ -1,6 +1,7 @@
 <script lang="ts">
   export let text: string = "";
   export let outline: boolean = false;
+  export let icon: string = "";
 </script>
 
 <button 
@@ -8,7 +9,10 @@
   class:outline
   class="btn"
 >
-  { text }
+  {#if icon.length}
+    <span class="material-icons">{icon}</span>
+  {/if}
+  {text}
 </button>
 
 <style type="text/postcss">
@@ -19,6 +23,9 @@
     @apply shadow;
     @apply text-center;
     @apply text-white;
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
   }
 
   .btn:hover {
