@@ -19,6 +19,8 @@
   }
 
   input {
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.4rem;
     @apply p-3;
     @apply rounded-l-xl;
     @apply border-2;

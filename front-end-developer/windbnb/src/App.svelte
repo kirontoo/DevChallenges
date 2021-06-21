@@ -13,7 +13,7 @@
   <section class="locations">
     <header class="locations-header">
       <h2>Stays in Finland</h2>
-      <span>12+ stays</span>
+      <span class="stays">12+ stays</span>
     </header>
 
     <section class="locations-list">
@@ -41,6 +41,7 @@ created by
     @apply flex-col;
     @apply justify-center;
     @apply items-center;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .search {
@@ -61,8 +62,10 @@ created by
     @apply mb-4;
   }
 
-  span {
+  .stays {
     @apply text-gray-dark;
+    @apply font-medium;
+    font-size: 0.5rem;
   }
 
   h2 {

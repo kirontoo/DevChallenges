@@ -1,18 +1,15 @@
 <script lang="ts">
-/*
-superHost: boolean
-type: string
-beds: number
-phooto: string
-rating: number
-title: string
-*/
 export let superHost: boolean;
 export let locationType: string;
 export let beds: number;
 export let photo: string;
 export let title: string;
 export let rating: number;
+
+let description = locationType;
+if ( beds ) {
+  description += ` ${beds} beds`; 
+}
 </script>
 
 <section class="card">
@@ -20,10 +17,10 @@ export let rating: number;
   <div class="card-info">
     <div class="card-info-container">
       {#if superHost}
-        <div class="card-host">super host</div>
+        <span class="card-host">super host</span>
       {/if}
       <span class="card-type">
-        <span class="card-type-description">{locationType} {beds} beds</span>
+        <span class="card-type-description">{description}</span>
         <span class="card-rating">
           <span class="material-icons">star_rate</span>
           <span class="rating">{rating}</span>
@@ -39,6 +36,7 @@ export let rating: number;
   @apply mb-8;
   @apply w-full;
   @apply h-full;
+  @apply font-medium;
 }
 .card-header {
   @apply w-full;
@@ -61,6 +59,7 @@ img {
   @apply w-full;
   @apply flex;
   @apply flex-row;
+  @apply flex-wrap;
   @apply items-center;
   @apply my-4;
 }
@@ -68,24 +67,27 @@ img {
 .card-host {
   @apply text-center;
   @apply uppercase;
-  @apply p-2;
   @apply rounded-full;
   @apply border-gray-dark;
   @apply text-gray-dark;
   @apply font-bold;
   @apply border-solid;
-  @apply mr-4;
   @apply border-2;
-  @apply w-2/5;
+  @apply p-2;
+  @apply mb-2;
+  @apply w-full;
+  font-size: 0.1em;
 }
 
 .card-type {
+  font-size: 0.2em;
   @apply w-full;
   @apply text-gray;
   @apply font-medium;
   @apply flex;
   @apply flex-row;
   @apply justify-between;
+  @apply font-medium;
 }
 
 .card-type-description {
@@ -103,8 +105,8 @@ img {
   @apply text-gray-dark;
 }
 
-
 .card-title {
+  font-size: 0.9rem;
   @apply w-full;
   @apply text-gray-dark;
   @apply font-bold;
