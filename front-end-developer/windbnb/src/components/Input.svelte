@@ -6,35 +6,45 @@
 </script>
 
 <section>
-  <input class="location" type="text" value={`${location.city}, ${location.country}`}>
-  <input class="guests" type="text">
-  <Button icon="search" />
+  <input class="location" type="text" placeholder="Location" value={`${location.city}, ${location.country}`}>
+  <input class="guests" type="text" placeholder="Add guests">
+  <button class="search-btn material-icons">search</button>
 </section>
 
 <style>
   section {
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.4rem;
     @apply flex;
     @apply flex-row;
     @apply w-full;
+    @apply rounded-xl;
+    @apply shadow-md;
   }
 
   input {
-    font-family: 'Mulish', sans-serif;
-    font-size: 0.4rem;
-    @apply p-3;
-    @apply rounded-l-xl;
-    @apply border-2;
-    @apply border-solid;
-    @apply border-white;
     @apply w-1/2;
   }
 
+  input::placeholder {
+    @apply text-center;
+  }
+
   .location {
-    @apply rounded-r-none;
+    @apply rounded-l-xl;
   }
 
   .guests {
-    @apply text-gray-light;
-    @apply rounded-l-none;
+    @apply border-r;
+    @apply border-l;
+    @apply border-gray-light;
+  }
+
+  .search-btn {
+    @apply text-red;
+  }
+
+  input, .search-btn {
+    @apply p-3;
   }
 </style>
