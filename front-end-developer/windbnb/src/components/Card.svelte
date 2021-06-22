@@ -1,10 +1,10 @@
 <script lang="ts">
-export let superHost: boolean;
-export let locationType: string;
-export let beds: number;
-export let photo: string;
-export let title: string;
-export let rating: number;
+export let superHost    : boolean;
+export let locationType : string;
+export let beds         : number;
+export let photo        : string;
+export let title        : string;
+export let rating       : number;
 
 let description = locationType;
 if ( beds ) {
