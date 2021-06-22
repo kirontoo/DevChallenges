@@ -1,45 +1,48 @@
 <script>
-import Input from './Input.svelte';
-import Button from './Button.svelte';
-export let location = '';
+  import Input from './Input.svelte';
+  import Button from './Button.svelte';
+  export let location = '';
 
-const handleLocationInput = ( event ) => {
-  console.log(event.target.value);
-}
+  const handleLocationInput = ( event ) => {
+  }
+
+  const handleSubmit = ( event ) => {
+    console.log( "submitting!" )
+  }
 </script>
 
-
 <header class="search">
-  <section>
+  <form on:submit|preventDefault={handleSubmit}>
     <Input 
-      on:input={handleLocationInput}
+      grouped
       value={location}
       placeholder="Location"/>
     <Input 
+      borders
       on:input={handleLocationInput} 
       placeholder="Add guests"/>
     <Button 
       grouped
+      type:submit
       color="red"
       background="white-light"
       icon="search"/>
-  </section>
+  </form>
 </header>
 
 <style>
-.search {
-  @apply m-auto;
-  @apply w-5/6;
-}
+  .search {
+    @apply m-auto;
+  }
 
-section {
-  font-family: 'Mulish', sans-serif;
-  font-size: 0.4rem;
-  @apply flex;
-  @apply flex-row;
-  @apply w-full;
-  @apply rounded-xl;
-  @apply shadow-md;
-}
+  form {
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.4rem;
+    @apply flex;
+    @apply flex-row;
+    @apply w-full;
+    @apply rounded-xl;
+    @apply shadow-md;
+  }
 
 </style>

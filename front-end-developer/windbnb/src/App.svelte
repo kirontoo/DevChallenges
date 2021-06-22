@@ -1,19 +1,27 @@
 <script lang="ts">
-  import Header from './components/Header.svelte';
-  import Input from './components/Input.svelte';
-  import Card from './components/Card.svelte';
-  import data from './stays.json'
+  import Header            from './components/Header.svelte';
+  import Card              from './components/Card.svelte';
+  import SearchBar         from './components/SearchBar.svelte';
+  import type { Location } from './global';
+  import data              from './stays.json'
+
+  let defaultLocation: Location = {
+    city: data[0].city,
+    country: data[0].country
+  };
+
+  // array of unique cities
+  let stays = [ ...new Set( data.map(({city}) => city) ) ];
+
 </script>
 
 <Header/>
 <main role="main">
-  <header class="search">
-    <Input />
-  </header>
   <section class="locations">
+    <SearchBar location={`${defaultLocation.city}, ${defaultLocation.country}`} />
     <header class="locations-header">
-      <h2>Stays in Finland</h2>
-      <span class="stays">12+ stays</span>
+      <h2>Stays in {defaultLocation.country}</h2>
+      <span class="total-stays">12+ stays</span>
     </header>
 
     <section class="locations-list">
@@ -44,11 +52,6 @@ created by
     font-family: 'Montserrat', sans-serif;
   }
 
-  .search {
-    @apply w-5/6;
-    @apply m-auto;
-  }
-
   .locations {
     @apply px-4;
     @apply my-4;
@@ -60,9 +63,10 @@ created by
     @apply justify-between;
     @apply items-center;
     @apply mb-4;
+    @apply mt-4;
   }
 
-  .stays {
+  .total-stays {
     @apply text-gray-dark;
     @apply font-medium;
     font-size: 0.5rem;
