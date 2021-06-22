@@ -8,7 +8,7 @@ export let rating: number;
 
 let description = locationType;
 if ( beds ) {
-  description += ` ${beds} beds`; 
+  description += ` ${beds.toFixed(2)} beds`; 
 }
 </script>
 
