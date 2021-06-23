@@ -1,26 +1,23 @@
 <script lang="ts">
-  import Header            from './components/Header.svelte';
-  import Card              from './components/Card.svelte';
-  import SearchBar         from './components/SearchBar.svelte';
-  import type { Location } from './global';
-  import data              from './stays.json'
-
-  let defaultLocation: Location = {
-    city: data[0].city,
-    country: data[0].country
-  };
+  import Header      from './components/Header.svelte';
+  import Card        from './components/Card.svelte';
+  import SearchBar   from './components/SearchBar.svelte';
+  import data        from './stays.json'
+  import { filters } from './stores/filters';
 
   // array of unique cities
-  let stays = [ ...new Set( data.map(({city}) => city) ) ];
+  let availableLocations = [ ...new Set( data.map(({city, country}) => `${city}, ${country}`) ) ];
 
+  let staysFilters = { location: { city: '', country: '' }, guests: 0 };
+  filters.subscribe( value => staysFilters = value );
 </script>
 
 <Header/>
 <main role="main">
   <section class="locations">
-    <SearchBar location={`${defaultLocation.city}, ${defaultLocation.country}`} />
+    <SearchBar/>
     <header class="locations-header">
-      <h2>Stays in {defaultLocation.country}</h2>
+      <h2>Stays in {staysFilters.location.country}</h2>
       <span class="total-stays">12+ stays</span>
     </header>
 

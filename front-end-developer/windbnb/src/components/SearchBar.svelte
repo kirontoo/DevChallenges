@@ -1,21 +1,31 @@
-<script>
-  import Input from './Input.svelte';
+<script lang="ts">
+  import { createEventDispatcher, onDestroy } from 'svelte';
+  import Input  from './Input.svelte';
   import Button from './Button.svelte';
-  export let location = '';
+  import { filters } from '../stores/filters';
+
+  const dispatch = createEventDispatcher();
+  let currFilters = { location: { city: '', country: '' }, guests: 0 };
+  const unsubscribe = filters.subscribe( value => currFilters = value );
+
 
   const handleLocationInput = ( event ) => {
   }
 
   const handleSubmit = ( event ) => {
-    console.log( "submitting!" )
+    console.log( currFilters );
   }
+
+  const submit = () => dispatch("submit");
+
+  onDestroy( () => unsubscribe() );
 </script>
 
 <header class="search">
   <form on:submit|preventDefault={handleSubmit}>
     <Input 
       grouped
-      value={location}
+      value={`${currFilters.location.city}, ${currFilters.location.country}`}
       placeholder="Location"/>
     <Input 
       borders
@@ -23,7 +33,7 @@
       placeholder="Add guests"/>
     <Button 
       grouped
-      type:submit
+      on:click={submit}
       color="red"
       background="white-light"
       icon="search"/>
