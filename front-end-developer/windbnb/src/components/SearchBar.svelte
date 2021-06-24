@@ -1,19 +1,30 @@
 <script lang="ts">
+  export let availableLocations: string[];
+
+  import Button                    from './Button.svelte';
+  import Input                     from './Input.svelte';
   import { createEventDispatcher } from 'svelte';
-  import Input  from './Input.svelte';
-  import Button from './Button.svelte';
-  import { filters } from '../stores/filters';
+  import { filters }               from '../stores/filters';
 
+  // event emmitters
   const dispatch = createEventDispatcher();
-
-  const handleLocationInput = ( event ) => {
-  }
+  const submit = () => dispatch("submit", $filters);
+  const focusLocationInput = () => dispatch("focuslocation", availableLocations);
+  const focusGuestsInput = () => dispatch("focusguests");
 
   const handleSubmit = ( event ) => {
-    console.log( currFilters );
-  }
+    let { location, guests } = event.target;
+    let [ city, country ] = location.value.split(',');
 
-  const submit = () => dispatch("submit");
+    // set location
+    $filters.location = {
+      city: city.trim(),
+      country: country.trim()
+    };
+
+    // set guests
+    $filters.guests = guests.value == '' ? 0 : Number(guests.value);
+  }
 
 </script>
 
@@ -21,12 +32,18 @@
   <form on:submit|preventDefault={handleSubmit}>
     <Input 
       grouped
+      id="location"
+      placeholder="Location"
       value={`${$filters.location.city}, ${$filters.location.country}`}
-      placeholder="Location"/>
+      on:focus={focusLocationInput}
+    />
     <Input 
       borders
-      on:input={handleLocationInput} 
-      placeholder="Add guests"/>
+      id="guests"
+      placeholder="Add guests"
+      value={$filters.guests ? `${$filters.guests}` : ''}
+      on:focus={focusGuestsInput}
+    />
     <Button 
       grouped
       on:click={submit}
