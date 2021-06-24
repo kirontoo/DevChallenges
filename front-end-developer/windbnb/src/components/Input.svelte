@@ -3,17 +3,20 @@
   export let borders     = false;
   export let placeholder = '';
   export let value       = '';
+  export let id          = '';
 </script>
 
-  <input 
-    on:input
-    on:change
-    on:click
-    class:grouped
-    class:borders
-    {value}
-    type="text"
-    {placeholder}>
+<input
+  on:input
+  on:change
+  on:click
+  class:grouped
+  class:borders
+  {id}
+  {value}
+  type="text"
+  {placeholder}
+/>
 
 <style>
   input {
