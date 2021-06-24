@@ -25,7 +25,7 @@
 <Header/>
 <main role="main">
   <section class="locations">
-    <SearchBar/>
+    <SearchBar {availableLocations}/>
     <header class="locations-header">
       <h2>Stays in {$filters.location.country}</h2>
       <span class="total-stays">{stays.length} stays</span>
