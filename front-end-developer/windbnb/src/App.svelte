@@ -8,15 +8,15 @@
   import { onMount }   from 'svelte';
 
   // array of unique cities
-  let availableLocations = [ 
-    ...new Set( data.map(({city, country}) => `${city}, ${country}`) ) 
+  let availableLocations = [
+    ...new Set( data.map(({city, country}) => `${city}, ${country}`) )
   ];
 
-  let stays = [];
+  $: stays = [];
 
   const filterData = () => {
     let { location, guests } = $filters;
-    stays = data.filter( (s: Stay) => location.city == s.city && location.country == s.country && guests <= s.maxGuests ) 
+    stays = data.filter( (s: Stay) => location.city == s.city && location.country == s.country && guests <= s.maxGuests );
   }
 
   onMount( filterData );
@@ -25,7 +25,7 @@
 <Header/>
 <main role="main">
   <section class="locations">
-    <SearchBar {availableLocations}/>
+    <SearchBar {availableLocations} on:filterdata={filterData}/>
     <header class="locations-header">
       <h2>Stays in {$filters.location.country}</h2>
       <span class="total-stays">{stays.length} stays</span>
@@ -39,7 +39,7 @@
   </section>
 </main>
 <footer class="text-sm text-gray">
-created by 
+  created by
   <a class="text-gray underline font-bold" href="https://www.github.com/kirontoo" target="-default"> Kirontoo </a>
   - devChallenges.io
 </footer>

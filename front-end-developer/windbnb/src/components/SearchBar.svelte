@@ -7,10 +7,11 @@
   import { filters }               from '../stores/filters';
 
   // event emmitters
-  const dispatch = createEventDispatcher();
-  const submit = () => dispatch("submit", $filters);
-  const focusLocationInput = () => dispatch("focuslocation", availableLocations);
-  const focusGuestsInput = () => dispatch("focusguests");
+  const dispatch            =  createEventDispatcher();
+  const submit              =  () => dispatch("submit", $filters);
+  const filterData          =  () => dispatch("filterdata");
+  const focusLocationInput  =  () => dispatch("focuslocation", availableLocations);
+  const focusGuestsInput    =  () => dispatch("focusguests");
 
   const handleSubmit = ( event ) => {
     let { location, guests } = event.target;
@@ -18,33 +19,37 @@
 
     // set location
     $filters.location = {
-      city: city.trim(),
-      country: country.trim()
+      city    : city.trim(),
+      country : country.trim()
     };
 
     // set guests
-    $filters.guests = guests.value == '' ? 0 : Number(guests.value);
+    $filters.guests = guests.value.length  ? 0 : Number(guests.value);
+
+    // dispatch event
+    filterData();
+    console.log($filters)
   }
 
 </script>
 
 <header class="search">
+  <div class="hi"></div>
   <form on:submit|preventDefault={handleSubmit}>
-    <Input 
-      grouped
+    <Input
       id="location"
       placeholder="Location"
       value={`${$filters.location.city}, ${$filters.location.country}`}
       on:focus={focusLocationInput}
     />
-    <Input 
+    <Input
       borders
       id="guests"
       placeholder="Add guests"
       value={$filters.guests ? `${$filters.guests}` : ''}
       on:focus={focusGuestsInput}
     />
-    <Button 
+    <Button
       grouped
       on:click={submit}
       color="red"
