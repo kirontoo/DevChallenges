@@ -7,7 +7,7 @@
   export let grouped    : boolean = false;
 </script>
 
-<button 
+<button
   on:click
   class:outline
   class:grouped
@@ -21,16 +21,13 @@
 
 <style type="text/postcss">
   .btn {
-    @apply p-2; 
-    @apply rounded-md; 
+    @apply p-2;
+    @apply rounded-md;
     @apply shadow;
     @apply text-center;
     @apply flex;
     @apply justify-between;
     @apply items-center;
-  }
-
-  .btn:hover {
   }
 
   .outline {
