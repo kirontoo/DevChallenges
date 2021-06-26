@@ -10,6 +10,7 @@
   on:input
   on:change
   on:click
+  on:focus
   class:grouped
   class:borders
   {id}
