@@ -11,6 +11,8 @@
   on:change
   on:click
   on:focus
+  on:focusin
+  on:focusout
   class:grouped
   class:borders
   {id}
