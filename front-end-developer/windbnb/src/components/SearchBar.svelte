@@ -1,17 +1,24 @@
 <script lang="ts">
-  export let availableLocations: string[];
-
   import Button                    from './Button.svelte';
   import Input                     from './Input.svelte';
   import { createEventDispatcher } from 'svelte';
   import { filters }               from '../stores/filters';
 
+  let focused = false;
+
+  let inputFocus = {
+    focusLocation: false,
+    focusGuests: false,
+  };
+
   // event emmitters
   const dispatch            =  createEventDispatcher();
   const submit              =  () => dispatch("submit", $filters);
   const filterData          =  () => dispatch("filterdata");
-  const focusLocationInput  =  () => dispatch("focuslocation", availableLocations);
-  const focusGuestsInput    =  () => dispatch("focusguests");
+  const focusLocationInput  =  () => dispatch("focuslocation",{ ...inputFocus, focusLocation: true });
+  const focusGuestsInput    =  () => dispatch("focusguests", { ...inputFocus, focusGuests: true });
+  const focusOut            =  () => dispatch("focusout", inputFocus);
+  const focusIn             =  () => dispatch("focusin", inputFocus);
 
   const handleSubmit = ( event ) => {
     let { location, guests } = event.target;
@@ -33,9 +40,13 @@
 
 </script>
 
-<header class="search">
-  <div class="hi"></div>
+<header class:focused class="search">
+  <span class="edit">
+    <span class="text-xs font-bold text-black">Edit your search</span>
+    <i class="material-icons">closed</i>
+  </span>
   <form on:submit|preventDefault={handleSubmit}>
+    <!-- TODO: need to implement on:focusin and on:focusout -->
     <Input
       id="location"
       placeholder="Location"
@@ -71,6 +82,34 @@
     @apply w-full;
     @apply rounded-xl;
     @apply shadow-md;
+
+    /* NOTE: only happens when in focused mode */
+    width: 95%;
+  }
+
+  .edit {
+    /* position: absolute; */
+    /* top: 1em; */
+    /* left: 1.2em; */
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
+    @apply mb-4;
+    @apply bg-white-light;
+    @apply w-full;
+  }
+
+  i {
+    @apply m-0;
+    @apply p-0;
+  }
+
+  .focused {
+    position: absolute;
+    top: 1em;
+    z-index: 5;
+    @apply bg-white-light;
+    height: 20em;
   }
 
 </style>
