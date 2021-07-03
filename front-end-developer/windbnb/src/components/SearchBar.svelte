@@ -4,7 +4,9 @@
   import { createEventDispatcher } from 'svelte';
   import { filters }               from '../stores/filters';
 
+  // TODO: inputs should have either the top border rounded or just the bottom rounded
   let focused = false;
+  let hidden  = true;
 
   let inputFocus = {
     focusLocation: false,
@@ -13,12 +15,13 @@
 
   // event emmitters
   const dispatch            =  createEventDispatcher();
+  const toggleFocus         =  () => { focused = true; hidden = !hidden; }
   const submit              =  () => dispatch("submit", $filters);
   const filterData          =  () => dispatch("filterdata");
   const focusLocationInput  =  () => dispatch("focuslocation",{ ...inputFocus, focusLocation: true });
   const focusGuestsInput    =  () => dispatch("focusguests", { ...inputFocus, focusGuests: true });
-  const focusOut            =  () => dispatch("focusout", inputFocus);
-  const focusIn             =  () => dispatch("focusin", inputFocus);
+  /* const focusOut            =  () => dispatch("focusout", inputFocus); */
+  /* const focusIn             =  () => dispatch("focusin", inputFocus); */
 
   const handleSubmit = ( event ) => {
     let { location, guests } = event.target;
@@ -40,27 +43,46 @@
 
 </script>
 
-<header class:focused class="search">
-  <span class="edit">
-    <span class="text-xs font-bold text-black">Edit your search</span>
-    <i class="material-icons">closed</i>
-  </span>
-  <form on:submit|preventDefault={handleSubmit}>
-    <!-- TODO: need to implement on:focusin and on:focusout -->
-    <Input
-      id="location"
-      placeholder="Location"
-      value={`${$filters.location.city}, ${$filters.location.country}`}
-      on:focus={focusLocationInput}
-    />
-    <Input
-      borders
-      id="guests"
-      placeholder="Add guests"
-      value={$filters.guests ? `${$filters.guests}` : ''}
-      on:focus={focusGuestsInput}
-    />
+<header
+  on:focusin={toggleFocus}
+  on:focusout={toggleFocus}
+  class:focused
+  class="search"
+>
+  <form class:column={focused} on:submit|preventDefault={handleSubmit}>
+    <span class:hidden={false} class="edit">
+      <span class="text-xs font-bold text-black">Edit your search</span>
+      <i class="material-icons">closed</i>
+    </span>
+    <div
+      class:column={focused}
+      class:rounded={focused}
+      class="search-container"
+    >
+
+      <label class:hidden for="location">Location</label>
+      <Input
+        full={focused}
+        id="location"
+        placeholder="Location"
+        value={`${$filters.location.city}, ${$filters.location.country}`}
+        on:focus={focusLocationInput}
+      />
+
+      <label class:hidden for="guests">guests</label>
+      <Input
+        full={focused}
+        bordersGrouped={!focused}
+        borders={focused}
+        id="guests"
+        placeholder="Add guests"
+        value={$filters.guests ? `${$filters.guests}` : ''}
+        on:focus={focusGuestsInput}
+      />
+    </div>
+
     <Button
+      full={focused}
       grouped
       on:click={submit}
       color="red"
@@ -81,10 +103,17 @@
     @apply flex-row;
     @apply w-full;
     @apply rounded-xl;
-    @apply shadow-md;
 
     /* NOTE: only happens when in focused mode */
     width: 95%;
+  }
+
+
+  .search-container {
+    @apply flex;
+    @apply flex-row;
+    @apply items-center;
+    @apply h-full;
   }
 
   .edit {
@@ -109,7 +138,25 @@
     top: 1em;
     z-index: 5;
     @apply bg-white-light;
-    height: 20em;
+    /* height: 20em; */
+    @apply w-full;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .column {
+    @apply flex-col;
+    width: 90%;
+    @apply items-center;
+    @apply justify-between;
+  }
+
+  .rounded {
+    @apply rounded-md;
+    @apply border-gray-light;
+    @apply border;
   }
 
 </style>
